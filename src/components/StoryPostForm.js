@@ -19,11 +19,12 @@ export default function StoryPostForm({ user, onStoryPosted }) {
 
     try {
       // Replace below URL with your backend URL and API endpoint
-      const response = await fetch("http://localhost:4000/api/stories", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ user, storyText, emotion }),
-      });
+      const response = await fetch("https://mann-backend.onrender.com/api/stories", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ user, storyText, emotion }),
+});
+
 
       if (!response.ok) {
         throw new Error("Failed to post story");

@@ -8,7 +8,8 @@ export default function StoryList() {
   useEffect(() => {
     async function fetchStories() {
       try {
-        const res = await fetch("http://localhost:4000/api/stories");
+       const res = await fetch("https://mann-backend.onrender.com/api/stories");
+
         if (!res.ok) throw new Error(`Error fetching stories: ${res.status}`);
         const data = await res.json();
         setStories(data.stories);
